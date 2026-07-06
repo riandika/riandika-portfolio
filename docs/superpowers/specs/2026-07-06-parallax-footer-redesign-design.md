@@ -17,9 +17,9 @@ Redesign the portfolio web application to feature a dark minimalist theme with a
 ## 4. Components
 
 ### 4.1. Core Sections (Hero, About, Projects)
+- **Hero Section:** Must explicitly maintain the user's profile photo. The layout will pair the photo with the introductory text, using the new Green accent for highlights (e.g., photo borders or subtle accents).
 - Retain the current minimalist structure but swap any remaining orange/blue accents for the new Green accent.
 - Ensure text contrasts well against the `#111111` background.
-
 ### 4.2. Parallax Footer (`ParallaxFooter.tsx`)
 A new dedicated component placed at the very bottom of the page.
 - **Background:** A gradient tying the black body background into the dark green footer sky.
