@@ -39,7 +39,7 @@ export default function Hero() {
       transition={{ duration: 0.5 }} className="hero" id="hero">
       <div className="content">
         {/* Photo */}
-        <div className="photoWrap">
+        <div className="photoWrap" style={{ border: '4px solid var(--primary)', boxShadow: '0 0 20px var(--primary-dark)' }}>
           
           <img src="/my-photo.png" alt="I Nengah Riandika" className="photo" />
         </div>
