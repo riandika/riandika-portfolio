@@ -74,7 +74,7 @@ export default function Projects() {
           {PROJECTS.map((project, i) => (
             <div
               key={project.title}
-              className="card" data-aos-delay={String(i * 100)}
+              className="card"
             >
               <div className="cardGlow" />
               <div className="cardContent">

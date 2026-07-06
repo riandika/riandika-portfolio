@@ -1,8 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
 
-
-
 const CONTACT_INFO = [
   {
     icon: (

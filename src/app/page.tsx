@@ -14,28 +14,14 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main>
-        <section id="hero">
-          <Hero />
-        </section>
-        <section id="about">
-          <About />
-        </section>
-        <section id="skills">
-          <Skills />
-        </section>
-        <section id="experience">
-          <Experience />
-        </section>
-        <section id="projects">
-          <Projects />
-        </section>
-        <section id="education">
-          <Education />
-        </section>
-        <section id="contact">
-          <Contact />
-        </section>
+      <main className="mainContent">
+        <Hero />
+        <About />
+        <Skills />
+        <Experience />
+        <Projects />
+        <Education />
+        <Contact />
       </main>
       <ParallaxFooter />
     </>

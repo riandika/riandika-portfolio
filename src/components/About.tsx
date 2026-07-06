@@ -1,8 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
 
-
-
 const INFO_CARDS = [
   { icon: '📍', label: 'Location', value: 'Jakarta, Indonesia' },
   { icon: '💼', label: 'Experience', value: '5+ Years' },

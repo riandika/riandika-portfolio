@@ -62,7 +62,7 @@ export default function Experience() {
           {EXPERIENCES.map((exp, i) => (
             <div
               key={exp.company}
-              className="timelineItem" data-aos-delay={String(i * 150)}
+              className="timelineItem"
             >
               <div className="timelineDot">
                 <span className="pulse" />

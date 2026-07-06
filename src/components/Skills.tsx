@@ -69,7 +69,7 @@ export default function Skills() {
           {SKILL_CATEGORIES.map((cat, i) => (
             <div
               key={cat.title}
-              className="card" data-aos-delay={String(i * 100)}
+              className="card"
             >
               <div className="cardHeader">
                 <span className="cardIcon">{cat.icon}</span>
