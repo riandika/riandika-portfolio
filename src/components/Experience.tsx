@@ -63,12 +63,14 @@ export default function Experience() {
             <div
               key={exp.company}
               className="timelineItem"
+              data-aos="fade-up"
+              data-aos-delay={i * 100}
             >
               <div className="timelineDot">
                 <span className="pulse" />
               </div>
 
-              <div className="card">
+              <div className="glassCard">
                 <div className="cardHeader">
                   <h3 className="role">{exp.role}</h3>
                   <span className="period">{exp.period}</span>

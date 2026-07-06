@@ -54,17 +54,22 @@ export default function Contact() {
         </p>
 
         <div className="grid" >
-          {CONTACT_INFO.map((item) => (
+          {CONTACT_INFO.map((item, i) => (
             <a
               key={item.label}
               href={item.href || '#'}
               target={item.href?.startsWith('http') ? '_blank' : undefined}
               rel={item.href?.startsWith('http') ? 'noopener noreferrer' : undefined}
-              className="card"
+              className="glassCard"
+              style={{ display: 'flex', alignItems: 'center', gap: '16px', textDecoration: 'none' }}
+              data-aos="fade-up"
+              data-aos-delay={i * 100}
             >
               <div className="cardIcon">{item.icon}</div>
-              <span className="cardLabel">{item.label}</span>
-              <span className="cardValue">{item.value}</span>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <span className="cardLabel" style={{ display: 'block', fontSize: '0.85rem', color: 'var(--text-muted)' }}>{item.label}</span>
+                <span className="cardValue" style={{ display: 'block', fontSize: '1rem', color: 'var(--text-main)' }}>{item.value}</span>
+              </div>
             </a>
           ))}
         </div>

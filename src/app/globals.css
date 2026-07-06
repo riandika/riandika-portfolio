@@ -7,10 +7,10 @@
   --mountain-front: #07140b;
   --bg: var(--background);
   --text-main: var(--foreground);
-  --text-muted: #888;
-  --border: #222;
-  --bg-card: #1a1a1a;
-  --bg-hover: #222;
+  --text-muted: #cccccc;
+  --border: rgba(255, 255, 255, 0.1);
+  --bg-card: rgba(26, 26, 26, 0.4);
+  --bg-hover: rgba(255, 255, 255, 0.1);
 }
 
 * {
@@ -55,8 +55,11 @@ img {
   padding: 0 24px;
   width: 100%;
 }
-section {
-  padding: 120px 0;
+section, .hero, .about, .experience, .projects, .contact, .skills, .education {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 80px 0;
   border-bottom: 1px solid var(--border);
 }
 .sectionTitle {
@@ -131,14 +134,9 @@ section {
   }
 }
 
-/* Hero Section */
 .hero {
-  padding-top: 180px;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
 }
 .content {
   max-width: 1100px;
@@ -188,7 +186,7 @@ section {
 }
 .btnPrimary {
   background: var(--primary);
-  color: var(--bg);
+  color: #ffffff !important;
   padding: 12px 24px;
   border-radius: 6px;
   font-weight: 500;
@@ -196,10 +194,15 @@ section {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  transition: opacity 0.2s;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  box-shadow: 0 0 15px rgba(0, 229, 114, 0.2);
 }
 .btnPrimary:hover {
-  opacity: 0.9;
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary) !important;
+  box-shadow: 0 0 25px rgba(0, 229, 114, 0.4);
 }
 .btnSecondary {
   background: transparent;
@@ -231,13 +234,17 @@ section {
 /* Generic Cards */
 .card, .glassCard {
   background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border);
   padding: 32px;
   border-radius: 12px;
-  transition: border-color 0.2s;
+  transition: all 0.3s ease;
 }
 .card:hover, .glassCard:hover {
-  border-color: var(--text-muted);
+  border-color: var(--primary);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 229, 114, 0.1);
 }
 .cardHeader, .iconWrap, .cardIcon, .infoIcon {
   color: var(--primary);
@@ -301,7 +308,53 @@ section {
 .timeline {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 40px;
+  position: relative;
+}
+.timelineLine {
+  position: absolute;
+  left: 24px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--border);
+}
+@media (min-width: 768px) {
+  .timelineLine {
+    left: 200px;
+  }
+}
+.timelineDot {
+  position: absolute;
+  left: 17px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--background);
+  border: 2px solid var(--primary);
+  margin-top: 6px;
+  z-index: 1;
+}
+@media (min-width: 768px) {
+  .timelineDot {
+    left: 193px;
+  }
+}
+.pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background: var(--primary);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0, 229, 114, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(0, 229, 114, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 229, 114, 0); }
 }
 .timelineItem {
   display: grid;
@@ -451,4 +504,73 @@ section {
 }
 .backToTop:hover {
   color: var(--primary);
+}
+
+/* Custom Cursor */
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--primary);
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+.cursor-glow {
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.5;
+  box-shadow: 0 0 15px var(--primary);
+}
+
+/* Scroll To Top */
+.scrollToTopBtn {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 99;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+.scrollToTopBtn:hover {
+  border-color: var(--primary);
+  box-shadow: 0 0 15px rgba(0, 229, 114, 0.3);
+  transform: translateY(-5px);
+}
+
+/* Stars Background */
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  background: transparent url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png') repeat top center;
+  animation: moveStars 200s linear infinite;
+}
+@keyframes moveStars {
+  from { background-position: 0 0; }
+  to { background-position: -10000px 5000px; }
 }
