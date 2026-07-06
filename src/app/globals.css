@@ -7,6 +7,12 @@
   --primary-dark: #00994d;
   --mountain-back: #184a28;
   --mountain-front: #07140b;
+  --bg: var(--background);
+  --text-main: var(--foreground);
+  --text-muted: #888;
+  --border: #222;
+  --bg-card: #1a1a1a;
+  --bg-hover: #222;
 }
 
 * {
@@ -34,7 +40,7 @@ a {
   transition: color 0.2s ease;
 }
 a:hover {
-  color: var(--accent);
+  color: var(--primary);
 }
 ul {
   list-style: none;
@@ -59,14 +65,14 @@ section {
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 40px;
-  color: var(--accent);
+  color: var(--primary);
   display: inline-block;
 }
 .underline {
   display: block;
   width: 40px;
   height: 2px;
-  background: var(--accent);
+  background: var(--primary);
   margin-top: 8px;
 }
 .grid {
@@ -102,7 +108,7 @@ section {
 .logo {
   font-weight: 600;
   font-size: 1.2rem;
-  color: var(--accent);
+  color: var(--primary);
 }
 .dot {
   color: var(--text-muted);
@@ -116,7 +122,7 @@ section {
   color: var(--text-muted);
 }
 .link.active, .link:hover {
-  color: var(--accent);
+  color: var(--primary);
 }
 .hamburger {
   display: none;
@@ -164,7 +170,7 @@ section {
   letter-spacing: -0.02em;
 }
 .highlight {
-  color: var(--accent);
+  color: var(--primary);
 }
 .titleWrap {
   font-size: 1.2rem;
@@ -183,7 +189,7 @@ section {
   margin-bottom: 48px;
 }
 .btnPrimary {
-  background: var(--accent);
+  background: var(--primary);
   color: var(--bg);
   padding: 12px 24px;
   border-radius: 6px;
@@ -221,7 +227,7 @@ section {
   color: var(--text-muted);
 }
 .social:hover {
-  color: var(--accent);
+  color: var(--primary);
 }
 
 /* Generic Cards */
@@ -236,7 +242,7 @@ section {
   border-color: var(--text-muted);
 }
 .cardHeader, .iconWrap, .cardIcon, .infoIcon {
-  color: var(--accent);
+  color: var(--primary);
   margin-bottom: 16px;
   display: flex;
   align-items: center;
@@ -245,7 +251,7 @@ section {
 .cardTitle, .university, .role, .bioTitle {
   font-size: 1.25rem;
   font-weight: 500;
-  color: var(--accent);
+  color: var(--primary);
   margin-bottom: 8px;
 }
 .cardDesc, .degree, .bioText, .description {
@@ -338,7 +344,7 @@ section {
   display: block;
 }
 .titleLink {
-  color: var(--accent);
+  color: var(--primary);
 }
 .titleLink:hover {
   text-decoration: underline;
@@ -387,7 +393,7 @@ section {
 }
 .ctaHeading {
   font-size: 1.5rem;
-  color: var(--accent);
+  color: var(--primary);
   margin-bottom: 16px;
 }
 .ctaSub {
@@ -407,7 +413,7 @@ section {
   margin-top: 12px;
 }
 .navTitle {
-  color: var(--accent);
+  color: var(--primary);
   margin-bottom: 16px;
   font-weight: 500;
 }
@@ -446,5 +452,5 @@ section {
   cursor: pointer;
 }
 .backToTop:hover {
-  color: var(--accent);
+  color: var(--primary);
 }

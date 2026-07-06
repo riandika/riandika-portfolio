@@ -18,15 +18,15 @@ export default function About() {
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.5 }} className="about" id="about">
       <div className="container">
-        <h2 className="sectionTitle" style={{ color: 'var(--primary)' }}>
+        <h2 className="sectionTitle">
           About Me
-          <span className="underline" style={{ background: 'var(--primary)' }} />
+          <span className="underline" />
         </h2>
 
         <div className="grid">
           {/* Left – Photo */}
           <div className="photoCol" >
-            <div className="photoFrame" style={{ borderColor: 'var(--primary)' }}>
+            <div className="photoFrame">
               <div className="frameDeco" />
               <img src="/my-photo.png" alt="I Nengah Riandika" className="photo" />
               <div className="frameCorner" />
@@ -36,7 +36,7 @@ export default function About() {
           {/* Right – Bio */}
           <div className="bioCol" >
             <div className="glassCard">
-              <h3 className="bioTitle" style={{ color: 'var(--primary)' }}>Frontend Engineer &amp; UI Architect</h3>
+              <h3 className="bioTitle">Frontend Engineer &amp; UI Architect</h3>
               <p className="bioText">
                 I&apos;m a results‑driven frontend engineer with over 5 years of experience designing and
                 developing high‑performance web applications in the banking and fintech industry. My expertise
@@ -57,7 +57,7 @@ export default function About() {
         <div className="infoGrid" >
           {INFO_CARDS.map((card) => (
             <div key={card.label} className="infoCard">
-              <span className="infoIcon" style={{ color: 'var(--primary)' }}>{card.icon}</span>
+              <span className="infoIcon">{card.icon}</span>
               <span className="infoLabel">{card.label}</span>
               <span className="infoValue">{card.value}</span>
             </div>
