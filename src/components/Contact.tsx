@@ -45,9 +45,9 @@ export default function Contact() {
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.5 }} className="contact" id="contact">
       <div className="container">
-        <h2 className="sectionTitle" >
+        <h2 className="sectionTitle" style={{ color: 'var(--primary)' }}>
           Get In Touch
-          <span className="underline" />
+          <span className="underline" style={{ background: 'var(--primary)' }} />
         </h2>
 
         <p className="ctaText" >
@@ -64,7 +64,7 @@ export default function Contact() {
               rel={item.href?.startsWith('http') ? 'noopener noreferrer' : undefined}
               className="card"
             >
-              <div className="cardIcon">{item.icon}</div>
+              <div className="cardIcon" style={{ color: 'var(--primary)' }}>{item.icon}</div>
               <span className="cardLabel">{item.label}</span>
               <span className="cardValue">{item.value}</span>
             </a>
@@ -72,12 +72,12 @@ export default function Contact() {
         </div>
 
         <div className="ctaSection" >
-          <h3 className="ctaHeading">Let&apos;s work together</h3>
+          <h3 className="ctaHeading" style={{ color: 'var(--primary)' }}>Let&apos;s work together</h3>
           <p className="ctaSub">
             Download my resume to learn more about my work and experience.
           </p>
           <div className="ctaButtons">
-            <a href="/resume.pdf" className="btnPrimary" target="_blank" rel="noopener noreferrer">
+            <a href="/resume.pdf" className="btnPrimary" style={{ background: 'var(--primary)', color: '#111' }} target="_blank" rel="noopener noreferrer">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               Download Resume
             </a>

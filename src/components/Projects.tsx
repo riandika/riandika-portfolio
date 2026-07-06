@@ -65,9 +65,9 @@ export default function Projects() {
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.5 }} className="projects" id="projects">
       <div className="container">
-        <h2 className="sectionTitle" >
+        <h2 className="sectionTitle" style={{ color: 'var(--primary)' }}>
           Featured Projects
-          <span className="underline" />
+          <span className="underline" style={{ background: 'var(--primary)' }} />
         </h2>
 
         <div className="grid">
@@ -81,7 +81,7 @@ export default function Projects() {
                 <span className="category">{project.category}</span>
                 <h3 className="cardTitle">
                   {project.url ? (
-                    <a href={project.url} target="_blank" rel="noopener noreferrer" className="titleLink">
+                    <a href={project.url} target="_blank" rel="noopener noreferrer" className="titleLink" style={{ color: 'var(--primary)' }}>
                       {project.title}
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                     </a>
