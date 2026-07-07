@@ -45,4 +45,5 @@ next-env.d.ts
 .codegraph/
 .codegraph-*/
 
-/docs/
+/docs
+migrate.py
