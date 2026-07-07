@@ -13,7 +13,7 @@ export default function CustomCursor() {
     
     const updateHoverState = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      if (target.closest('a') || target.closest('button') || target.closest('.glassCard') || target.closest('.navbar')) {
+      if (target.closest('a') || target.closest('button') || target.closest('.glassCard') || target.closest('.card') || target.closest('.navbar')) {
         setIsHovering(true);
       } else {
         setIsHovering(false);

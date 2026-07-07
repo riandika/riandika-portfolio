@@ -86,7 +86,7 @@ export default function Hero() {
         className="scroll-hint"
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Infinity, duration: 1.5 }}
-        style={{ position: 'absolute', bottom: '100px', left: '50%', transform: 'translateX(-50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', color: 'var(--text-muted)' }}
+        style={{ position: 'absolute', bottom: '100px', left: 0, right: 0, margin: '0 auto', width: '100px', display: 'flex', flexDirection: 'column', alignItems: 'center', color: 'var(--text-muted)' }}
       >
         <span style={{ fontSize: '0.8rem', marginBottom: '8px', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Scroll</span>
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>

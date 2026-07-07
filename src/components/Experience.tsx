@@ -72,8 +72,8 @@ export default function Experience() {
               </div>
 
               <div className="glassCard">
-                <div className="cardHeader">
-                  <h3 className="role">{exp.role}</h3>
+                <div className="cardHeaderExp">
+                  <h3 className="role" style={{ margin: 0 }}>{exp.role}</h3>
                   <span className="period">{exp.period}</span>
                 </div>
                 <p className="company">{exp.company}</p>

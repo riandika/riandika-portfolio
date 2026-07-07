@@ -44,7 +44,7 @@ export default function ParallaxFooter() {
       >
         <h1 style={{
           margin: 0,
-          fontSize: '5rem',
+          fontSize: 'clamp(2.5rem, 10vw, 5rem)',
           color: '#fff',
           textShadow: '0 4px 0 var(--primary), 0 8px 0 var(--primary-dark), 0 15px 20px rgba(0,0,0,0.8)',
           fontWeight: 900,
