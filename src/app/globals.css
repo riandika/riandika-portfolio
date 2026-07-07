@@ -19,6 +19,9 @@
   padding: 0;
 }
 
+html, body {
+  overflow-x: hidden;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -98,7 +101,11 @@ section, .hero, .about, .experience, .projects, .contact, .skills, .education {
   backdrop-filter: blur(12px);
   z-index: 50;
   border-bottom: 1px solid var(--border);
-  transition: box-shadow 0.3s ease;
+  transition: padding 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+.navbar.scrolled {
+  padding: 12px 0;
+  background: rgba(5, 5, 5, 0.9);
 }
 .navbar:hover {
   box-shadow: 0 0 20px rgba(0, 229, 114, 0.2);
@@ -223,24 +230,35 @@ section, .hero, .about, .experience, .projects, .contact, .skills, .education {
   margin-bottom: 48px;
 }
 .btnPrimary {
-  background: var(--primary);
-  color: #ffffff !important;
+  background: rgba(0, 229, 114, 0.1);
+  color: var(--primary) !important;
+  border: 1px solid var(--primary);
   padding: 12px 24px;
   border-radius: 6px;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 0.95rem;
   display: inline-flex;
   align-items: center;
   gap: 8px;
   transition: all 0.3s ease;
-  border: 1px solid transparent;
-  box-shadow: 0 0 15px rgba(0, 229, 114, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+.btnPrimary::before {
+  content: "";
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 229, 114, 0.4), transparent);
+  transition: all 0.5s ease;
+}
+.btnPrimary:hover::before {
+  left: 100%;
 }
 .btnPrimary:hover {
-  background: transparent;
-  border: 1px solid var(--primary);
-  color: var(--primary) !important;
-  box-shadow: 0 0 25px rgba(0, 229, 114, 0.4);
+  background: rgba(0, 229, 114, 0.2);
+  box-shadow: 0 0 20px rgba(0, 229, 114, 0.4);
+  transform: translateY(-2px);
 }
 .btnSecondary {
   background: transparent;
@@ -382,7 +400,7 @@ section, .hero, .about, .experience, .projects, .contact, .skills, .education {
 }
 @media (min-width: 768px) {
   .timelineLine {
-    left: 200px;
+    left: 40px;
   }
 }
 .timelineDot {
@@ -398,7 +416,7 @@ section, .hero, .about, .experience, .projects, .contact, .skills, .education {
 }
 @media (min-width: 768px) {
   .timelineDot {
-    left: 193px;
+    left: 33px;
   }
 }
 .pulse {
@@ -420,16 +438,12 @@ section, .hero, .about, .experience, .projects, .contact, .skills, .education {
 .timelineItem {
   display: flex;
   flex-direction: column;
-  gap: 16px;
   position: relative;
   padding-left: 60px;
 }
 @media (min-width: 768px) {
   .timelineItem {
-    display: grid;
-    grid-template-columns: 160px 1fr;
-    padding-left: 0;
-    gap: 60px;
+    padding-left: 80px;
   }
 }
 .period {
@@ -574,8 +588,8 @@ section, .hero, .about, .experience, .projects, .contact, .skills, .education {
 
 /* Custom Cursor */
 .cursor-glow {
-  width: 40px;
-  height: 40px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   position: fixed;
   top: 0;
@@ -583,7 +597,7 @@ section, .hero, .about, .experience, .projects, .contact, .skills, .education {
   pointer-events: none;
   z-index: 9998;
   opacity: 0;
-  background: radial-gradient(circle, rgba(0,229,114,0.4) 0%, rgba(0,229,114,0) 70%);
+  background: radial-gradient(circle, rgba(0,229,114,0.15) 0%, rgba(0,229,114,0) 70%);
   transition: opacity 0.3s ease;
 }
 .cursor-glow.active {
@@ -626,13 +640,11 @@ section, .hero, .about, .experience, .projects, .contact, .skills, .education {
   pointer-events: none;
   z-index: -1;
   background-image: 
-    radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.8) 100%, transparent),
-    radial-gradient(1px 1px at 40% 60%, rgba(255,255,255,0.6) 100%, transparent),
-    radial-gradient(2px 2px at 80% 30%, rgba(255,255,255,0.4) 100%, transparent),
-    radial-gradient(1.5px 1.5px at 30% 90%, rgba(255,255,255,0.7) 100%, transparent),
-    radial-gradient(1px 1px at 70% 80%, rgba(255,255,255,0.5) 100%, transparent);
-  background-size: 200px 200px;
-  opacity: 0.3;
+    radial-gradient(1.5px 1.5px at 20% 30%, rgba(255,255,255,0.7) 100%, transparent),
+    radial-gradient(2px 2px at 60% 70%, rgba(255,255,255,0.4) 100%, transparent),
+    radial-gradient(1px 1px at 80% 20%, rgba(255,255,255,0.5) 100%, transparent);
+  background-size: 300px 300px;
+  opacity: 0.2;
 }
 
 .stars-hero {

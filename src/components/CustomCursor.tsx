@@ -34,9 +34,9 @@ export default function CustomCursor() {
       <motion.div
         className={`cursor-glow ${isHovering ? 'active' : ''}`}
         animate={{
-          x: mousePosition.x - 20,
-          y: mousePosition.y - 20,
-          scale: isHovering ? 2.5 : 1,
+          x: mousePosition.x - 50,
+          y: mousePosition.y - 50,
+          scale: isHovering ? 1.5 : 1,
         }}
         transition={{ type: 'tween', ease: 'backOut', duration: 0.2 }}
       />

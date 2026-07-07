@@ -74,7 +74,7 @@ export default function Skills() {
             >
               <div className="cardHeader">
                 <span className="cardIcon">{cat.icon}</span>
-                <h3 className="cardTitle">{cat.title}</h3>
+                <h3 className="cardTitle" style={{ margin: 0 }}>{cat.title}</h3>
               </div>
               <div className="tags">
                 {cat.items.map((item) => (

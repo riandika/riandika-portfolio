@@ -2,9 +2,7 @@
 import { motion } from 'framer-motion';
 
 const STATS = [
-  { value: '4+', label: 'YEARS EXPERIENCE' },
-  { value: '10+', label: 'PROJECTS DELIVERED' },
-  { value: '5★', label: 'CLIENT RATING' },
+  { value: '5+', label: 'YEARS EXPERIENCE' },
 ];
 
 export default function About() {
@@ -23,17 +21,15 @@ export default function About() {
 
         <div className="grid">
           {/* Left – Photo */}
-          <div className="photoCol" >
-            <div className="photoFrame">
-              <div className="animated-gradient-bg" />
-              <img src="/my-photo.png" alt="I Nengah Riandika" className="photo" />
-            </div>
+          <div className="photoCol" style={{ position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <div style={{ position: 'absolute', width: '320px', height: '320px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(0,229,114,0.3) 0%, rgba(0,0,0,0) 70%)', zIndex: 0, bottom: 0 }} />
+            <img src="/my-photo.png" alt="I Nengah Riandika" style={{ position: 'relative', zIndex: 1, width: '300px', filter: 'grayscale(100%) contrast(1.1)', WebkitMaskImage: 'linear-gradient(to bottom, black 75%, transparent 100%)', maskImage: 'linear-gradient(to bottom, black 75%, transparent 100%)' }} />
           </div>
 
           {/* Right – Bio */}
           <div className="bioCol" >
             <div className="glassCard">
-              <h3 className="bioTitle">Frontend Engineer &amp; UI Architect</h3>
+              <h3 className="bioTitle">Frontend Engineer</h3>
               <p className="bioText">
                 I&apos;m a results‑driven frontend engineer with over 5 years of experience designing and
                 developing high‑performance web applications in the banking and fintech industry. My expertise

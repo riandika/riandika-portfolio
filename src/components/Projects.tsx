@@ -81,7 +81,7 @@ export default function Projects() {
             >
               <div className="cardGlow" />
               <div className="cardContent" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-                <span className="category" style={{ color: '#ffffff', fontWeight: 600, letterSpacing: '0.1em', opacity: 0.9 }}>{project.category}</span>
+                <span className="category" style={{ color: 'var(--text-muted)', fontWeight: 600, letterSpacing: '0.1em', opacity: 0.9 }}>{project.category}</span>
                 <h3 className="cardTitle" style={{ marginBottom: '16px', color: 'var(--primary)' }}>
                   {project.url ? (
                     <a href={project.url} target="_blank" rel="noopener noreferrer" className="titleLink" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
