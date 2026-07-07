@@ -10,6 +10,7 @@ export default function Education() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.5 }} className="education" id="education">
+      <div className="stars"></div>
       <div className="container">
         <h2 className="sectionTitle" >
           Education

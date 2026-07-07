@@ -50,6 +50,7 @@ export default function Experience() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.5 }} className="experience" id="experience">
+      <div className="stars"></div>
       <div className="container">
         <h2 className="sectionTitle" >
           Experience

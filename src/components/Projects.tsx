@@ -64,6 +64,7 @@ export default function Projects() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.5 }} className="projects" id="projects">
+      <div className="stars"></div>
       <div className="container">
         <h2 className="sectionTitle">
           Featured Projects
@@ -80,8 +81,8 @@ export default function Projects() {
             >
               <div className="cardGlow" />
               <div className="cardContent" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-                <span className="category" style={{ color: 'var(--primary)', fontWeight: 600, letterSpacing: '0.1em' }}>{project.category}</span>
-                <h3 className="cardTitle" style={{ marginBottom: '16px' }}>
+                <span className="category" style={{ color: '#ffffff', fontWeight: 600, letterSpacing: '0.1em', opacity: 0.9 }}>{project.category}</span>
+                <h3 className="cardTitle" style={{ marginBottom: '16px', color: 'var(--primary)' }}>
                   {project.url ? (
                     <a href={project.url} target="_blank" rel="noopener noreferrer" className="titleLink" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       {project.title}

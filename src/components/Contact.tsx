@@ -42,6 +42,7 @@ export default function Contact() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.5 }} className="contact" id="contact">
+      <div className="stars"></div>
       <div className="container">
         <h2 className="sectionTitle">
           Get In Touch

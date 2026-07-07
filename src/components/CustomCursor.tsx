@@ -13,7 +13,7 @@ export default function CustomCursor() {
     
     const updateHoverState = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      if (target.closest('a') || target.closest('button')) {
+      if (target.closest('a') || target.closest('button') || target.closest('.glassCard') || target.closest('.navbar')) {
         setIsHovering(true);
       } else {
         setIsHovering(false);
@@ -32,19 +32,11 @@ export default function CustomCursor() {
   return (
     <>
       <motion.div
-        className="cursor-dot"
-        animate={{
-          x: mousePosition.x - 4,
-          y: mousePosition.y - 4,
-        }}
-        transition={{ type: 'tween', ease: 'backOut', duration: 0.1 }}
-      />
-      <motion.div
-        className="cursor-glow"
+        className={`cursor-glow ${isHovering ? 'active' : ''}`}
         animate={{
           x: mousePosition.x - 20,
           y: mousePosition.y - 20,
-          scale: isHovering ? 1.5 : 1,
+          scale: isHovering ? 2.5 : 1,
         }}
         transition={{ type: 'tween', ease: 'backOut', duration: 0.2 }}
       />

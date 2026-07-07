@@ -1,11 +1,10 @@
 'use client';
 import { motion } from 'framer-motion';
 
-const INFO_CARDS = [
-  { icon: '📍', label: 'Location', value: 'Jakarta, Indonesia' },
-  { icon: '💼', label: 'Experience', value: '5+ Years' },
-  { icon: '✉️', label: 'Email', value: 'riandikatkj@gmail.com' },
-  { icon: '📱', label: 'Phone', value: '+6282347009242' },
+const STATS = [
+  { value: '4+', label: 'YEARS EXPERIENCE' },
+  { value: '10+', label: 'PROJECTS DELIVERED' },
+  { value: '5★', label: 'CLIENT RATING' },
 ];
 
 export default function About() {
@@ -15,6 +14,7 @@ export default function About() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.5 }} className="about" id="about">
+      <div className="stars"></div>
       <div className="container">
         <h2 className="sectionTitle">
           About Me
@@ -25,9 +25,8 @@ export default function About() {
           {/* Left – Photo */}
           <div className="photoCol" >
             <div className="photoFrame">
-              <div className="frameDeco" />
+              <div className="animated-gradient-bg" />
               <img src="/my-photo.png" alt="I Nengah Riandika" className="photo" />
-              <div className="frameCorner" />
             </div>
           </div>
 
@@ -51,13 +50,15 @@ export default function About() {
           </div>
         </div>
 
-        {/* Info cards */}
-        <div className="infoGrid" >
-          {INFO_CARDS.map((card) => (
-            <div key={card.label} className="infoCard">
-              <span className="infoIcon">{card.icon}</span>
-              <span className="infoLabel">{card.label}</span>
-              <span className="infoValue">{card.value}</span>
+        {/* Info stats */}
+        <div className="statsRow" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '40px', marginTop: '60px', padding: '32px 0', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
+          {STATS.map((stat, idx) => (
+            <div key={stat.label} style={{ display: 'flex', alignItems: 'center', gap: '40px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <span style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--primary)', marginBottom: '8px' }}>{stat.value}</span>
+                <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)', letterSpacing: '0.1em' }}>{stat.label}</span>
+              </div>
+              {idx < STATS.length - 1 && <div style={{ width: '1px', height: '60px', backgroundColor: 'var(--border)' }} />}
             </div>
           ))}
         </div>

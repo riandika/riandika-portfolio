@@ -33,7 +33,10 @@ export default function Hero() {
 
   return (
     <section className="hero" id="hero">
-      <div className="stars"></div>
+      <div className="stars stars-hero"></div>
+      <div className="shooting-star" style={{ top: '20%', left: '80%', animationDelay: '0s' }}></div>
+      <div className="shooting-star" style={{ top: '40%', left: '60%', animationDelay: '2s' }}></div>
+      <div className="shooting-star" style={{ top: '10%', left: '40%', animationDelay: '4s' }}></div>
       <div className="content">
         {/* Photo */}
         <div className="photoWrap" data-aos="zoom-in" style={{ border: '4px solid var(--primary)', boxShadow: '0 0 20px var(--primary-dark)' }}>
@@ -84,7 +87,7 @@ export default function Hero() {
         className="scroll-hint"
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Infinity, duration: 1.5 }}
-        style={{ position: 'absolute', bottom: '40px', left: '50%', transform: 'translateX(-50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', color: 'var(--text-muted)' }}
+        style={{ position: 'absolute', bottom: '100px', left: '50%', transform: 'translateX(-50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', color: 'var(--text-muted)' }}
       >
         <span style={{ fontSize: '0.8rem', marginBottom: '8px', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Scroll</span>
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
