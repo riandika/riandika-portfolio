@@ -11,23 +11,23 @@ interface SkillCategory {
 
 const SKILL_CATEGORIES: SkillCategory[] = [
   {
-    title: 'Frontend Frameworks',
-    icon: '⚛️',
-    items: ['React.js', 'Angular', 'Next.js', 'Stencil.js', 'Vue.js'],
+    title: 'Technologies',
+    icon: '🚀',
+    items: ['React.js', 'Angular', 'Next.js', 'Ionic Framework', 'Stencil.js', 'REST API'],
   },
   {
-    title: 'Languages',
+    title: 'Programming Languages',
     icon: '💻',
     items: ['JavaScript', 'TypeScript'],
   },
   {
-    title: 'Styling',
-    icon: '🎨',
+    title: 'Core Web Technologies',
+    icon: '🌐',
     items: ['HTML5', 'CSS3', 'SCSS', 'Tailwind CSS', 'Bootstrap'],
   },
   {
     title: 'UI Libraries',
-    icon: '🧩',
+    icon: '🎨',
     items: ['Ant Design', 'Angular Material', 'PrimeFaces', 'Ionic Component'],
   },
   {
@@ -49,6 +49,11 @@ const SKILL_CATEGORIES: SkillCategory[] = [
     title: 'Tools',
     icon: '🛠️',
     items: ['Git', 'Bitbucket', 'GitLab', 'GitHub', 'Jenkins', 'Nginx'],
+  },
+  {
+    title: 'Additional',
+    icon: '➕',
+    items: ['Vue.js', 'Laravel', 'Kotlin Android Development'],
   },
 ];
 

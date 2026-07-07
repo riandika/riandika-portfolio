@@ -1,8 +1,9 @@
 :root {
   --background: #0a0a0a;
   --foreground: #ffffff;
-  --primary: #00e572;
-  --primary-dark: #00994d;
+  --primary: rgb(84, 169, 103);
+  --secondary: rgb(150, 241, 166);
+  --primary-dark: rgb(60, 128, 76);
   --mountain-back: #184a28;
   --mountain-front: #07140b;
   --bg: var(--background);
@@ -182,6 +183,15 @@ section, .hero, .about, .experience, .projects, .contact, .skills, .education {
 .hero {
   position: relative;
   overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 0 160px; /* More padding bottom for mobile so content doesn't hit scroll hint */
+}
+@media (min-width: 992px) {
+  .hero {
+    padding: 80px 0;
+  }
 }
 .content {
   max-width: 1100px;
@@ -189,18 +199,122 @@ section, .hero, .about, .experience, .projects, .contact, .skills, .education {
   padding: 0 24px;
   width: 100%;
 }
+.heroGrid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 40px;
+}
+@media (min-width: 992px) {
+  .heroGrid {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+  }
+  .heroPhoto {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  .heroText {
+    flex: 1;
+  }
+}
+.photoContainer {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.photoContainer::before {
+  content: '';
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(84, 169, 103, 0.4) 0%, rgba(84, 169, 103, 0) 70%);
+  border-radius: 50%;
+  z-index: 0;
+}
+.gear-border {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 1.5px dashed var(--primary);
+  opacity: 0.6;
+  animation: spinGear 30s linear infinite;
+  z-index: 1;
+}
+.inner-ring {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 1px solid rgba(84, 169, 103, 0.2);
+  z-index: 1;
+}
+@keyframes spinGear {
+  100% { transform: rotate(360deg); }
+}
 .photoWrap {
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   overflow: hidden;
-  margin-bottom: 32px;
-  border: 1px solid var(--border);
+  position: relative;
+  z-index: 2;
+  background: var(--background);
 }
 .photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 15%;
+}
+
+.orbit-badge {
+  position: absolute;
+  padding: 6px 14px;
+  background: rgba(10, 20, 30, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  color: var(--primary);
+  font-size: 0.8rem;
+  font-weight: 500;
+  backdrop-filter: blur(4px);
+  z-index: 3;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.orbit-badge:hover {
+  transform: scale(1.1);
+}
+.orbit-badge.react {
+  top: 15%;
+  left: -10%;
+  color: #61dafb;
+}
+.orbit-badge.angular {
+  top: 15%;
+  right: -10%;
+  color: #ce143c;
+}
+.orbit-badge.typescript {
+  bottom: -5%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #3178c6;
+}
+.orbit-badge.typescript:hover {
+  transform: translateX(-50%) scale(1.1);
 }
 .name {
   font-size: 3.5rem;
@@ -223,11 +337,25 @@ section, .hero, .about, .experience, .projects, .contact, .skills, .education {
   color: var(--text-muted);
   max-width: 600px;
   margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 992px) {
+  .subtitle {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 .cta {
   display: flex;
   gap: 16px;
   margin-bottom: 48px;
+  justify-content: center;
+}
+@media (min-width: 992px) {
+  .cta {
+    justify-content: flex-start;
+  }
 }
 .btnPrimary {
   background: rgba(0, 229, 114, 0.1);
@@ -279,6 +407,12 @@ section, .hero, .about, .experience, .projects, .contact, .skills, .education {
 .socials {
   display: flex;
   gap: 24px;
+  justify-content: center;
+}
+@media (min-width: 992px) {
+  .socials {
+    justify-content: flex-start;
+  }
 }
 .social {
   color: var(--text-muted);
